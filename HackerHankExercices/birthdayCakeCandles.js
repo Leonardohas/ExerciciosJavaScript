@@ -8,3 +8,17 @@
     velas = [4,4,1,3]
     As velas de altura máxima têm 4 unidades de altura. Existem 2 delas, portanto, retorne 2.
 */
+
+function birthdayCakeCandles(candles) {
+    var tallestCandle = 0
+    var count = 0 
+
+    candles.sort((a, b) => b - a )
+    tallestCandle = candles[0] 
+    candles.forEach(candle => {
+        if (candle == tallestCandle) {
+            count += 1
+        }
+    });
+    return count
+}
