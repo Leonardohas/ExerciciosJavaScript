@@ -11,3 +11,23 @@
     Retorna 00:01:00
 */
 
+function timeConvertion(s){
+    var amAndPMHours = s.charAt(8); // Pega um caracter em uma certa posição da string
+    var militaryHours = "";
+    if (amAndPMHours == "A") {
+        if (s.substring(0,2) == "12") { // substring pega caracteres consecutivos nesse caso 0,2 irá retornar os caracteres do index 0 até index 1
+            militaryHours = "00";
+        } else {
+            militaryHours = s.substring(0,2);
+        }
+    } else {
+        if (s.substring(0,2) == "12"){
+            militaryHours = s.substring(0,2);
+        } else {
+            militaryHours = parseInt(s.substring(0,2), 10) + 12; //parseInt converte string em numeros
+        }
+    } 
+    return militaryHours + s.substring(2,8)
+}
+
+console.log(timeConvertion("07:05:45PM"))
