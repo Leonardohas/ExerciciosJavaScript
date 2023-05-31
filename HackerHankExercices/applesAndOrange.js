@@ -23,4 +23,20 @@ function applesAndOrange(s, t, a, b, apples, oranges){
     }
     console.log(applesCount);
     console.log(orangesCount);
-}
+    
+    // Usando forEach para obter o mesmo resultado
+    apples.forEach(apple => {
+        if ((apple + a) >= s && (apple + a) <= t ) {
+            applesCount += 1
+        }
+    });
+
+    oranges.forEach((orange) => {
+        if ((orange + b) <= t && (orange + b) >= s ) {
+            orangesCount += 1
+        }
+    });
+
+    console.log(applesCount);
+    console.log(orangesCount);
+};
