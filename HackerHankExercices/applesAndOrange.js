@@ -6,3 +6,21 @@
     Dado o valor de d par m amaças e n oranges, determine quantas maças e laranjas irá cair na casa de sam.
 */
 
+function applesAndOrange(s, t, a, b, apples, oranges){
+    var applesCount = 0;
+    var orangesCount = 0;
+
+    // usando o for normalmente para percorrer apples e oranges 
+    for (let index = 0; index < apples.length; index++) { 
+        if ((apples[index] + a) >= s && (apples[index] + a) <= t) {
+            applesCount += 1
+        }       
+    }
+    for (let index = 0; index < oranges.length; index++) {
+        if ((oranges[index] + b) <= t && (oranges[index] + b) >= s) {
+            orangesCount += 1
+        }       
+    }
+    console.log(applesCount);
+    console.log(orangesCount);
+}
