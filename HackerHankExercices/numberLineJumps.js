@@ -15,3 +15,35 @@ v2 = 2
 Depois de um pulo, eles estão ambos em x = 3, (x1 + v1 = 2 + 1, x2 + v2 = 1 + 2), então a resposta é YES
 
 */
+
+function kangaroo(x1, v1, x2, v2){
+    var kang1 = x1;
+    var kang2 = x2;
+    var yesOrNo = "";
+    for (let index = 0; index < 10000; index++) {
+        kang1 += v1;
+        kang2 += v2;
+        if (kang1 == kang2) {
+            yesOrNo = "YES"
+        } else {
+            yesOrNo = "NO"
+        }
+    }
+    return yesOrNo
+};
+// Esse abaixo funcionou!!!!
+function kangaroo(x1, v1, x2, v2){
+    var kang1 = x1;
+    var kang2 = x2;
+    var yesOrNo = "NO";
+    for (let index = 0; index < 10000; index++) {
+        kang1 += v1;
+        kang2 += v2;
+        if (kang1 == kang2) {
+            yesOrNo = "YES"
+        }
+    }
+    return yesOrNo
+};
+
+console.log(kangaroo(0, 3, 4, 2))
