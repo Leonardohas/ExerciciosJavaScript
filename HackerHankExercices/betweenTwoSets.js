@@ -10,3 +10,20 @@
     6 % 2 = 0,6 % 6 = 0,24 % 6 = 0 e 36 % 6 = 0 para o primeiro valor 
     12 % 2 = 0,12 % 6 = 0 e 24 % 12 = 0,36 % 12 = 0 para o segundo valor, retorna 2  
 */
+
+function getTotalX(a,b){
+    let count = 0;
+    let start = Math.min(...a, ...b);
+    let end = Math.max(...a, ...b);
+
+    for(let i = start; i <= end; i++){
+           if(a.every(number => i % number === 0)
+                && b.every(number => number % i === 0)){
+                count++;
+            }
+    }
+    
+    return count;
+};
+
+console.log(getTotalX([2,6], [24,36]))
